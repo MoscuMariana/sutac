@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rezervări - Pescăria Sutac</title>
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        /* Stiluri extra pentru integrarea hărții */
+        .booking-container {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 80vh;
+            background-color: #0d1117;
+        }
+
+        .map-section {
+            flex: 1;
+            min-width: 50%;
+            min-height: 400px;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 350px;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #161b22;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(1) invert(1) contrast(1.2); /* Aspect dark mode pentru hartă */
+        }
+
+        .ak-custom-input, .ak-form-select, .time-input, .date-input, .bot-check-input {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .booking-title {
+            color: #00adef;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .booking-container { flex-direction: column; }
+            .map-section { height: 300px; min-width: 100%; }
+        }
+    </style>
+</head>
+
+
+
+<body>
+ <header class="ak-site_header ak-sticky_header" style="background-color: #0d1117;">
+        <div class="ak-main_header">
+            <div class="container">
+                <div class="ak-main_header_in" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+                    <a href="index.html"><img src="assets/img/logo sutac alb.png" alt="Logo" style="height: 50px;"></a>
+                    <nav class="ak-nav">
+                        <ul class="ak-nav_list" style="display: flex; list-style: none; gap: 20px;">
+                            <li><a href="index.html" style="color: white;">Acasă</a></li>
+                            <li><a href="menu.html" style="color: white;">Meniu</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+                                            <div class="ak-height-30 ak-height-lg-30"></div>
+                                        <div class="ak-height-30 ak-height-lg-30"></div>
+                                        <div class="ak-height-30 ak-height-lg-30"></div>
+
+
+    <main>
+        <section class="booking-container">
+            <div class="map-section">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.385854473929!2d28.694222486827098!3d44.36366603162866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ba59268312935f%3A0xa1fdd4e4cd6283e9!2sRestaurant%20Pescaria%20Sutac!5e0!3m2!1sro!2sro!4v1774253667794!5m2!1sro!2sro" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="form-section">
+                <h2 class="booking-title">Rezervă o masă</h2>
+                <p style="color: #ccc; margin-bottom: 30px;">Te așteptăm pe malul mării pentru o experiență culinară autentică.</p>
+                
+                <form id="whatsappForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" id="nume_client" placeholder="Nume Complet" required class="ak-custom-input">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" id="telefon_client" placeholder="Nr. Telefon" required class="ak-custom-input">
+                        </div>
+                    </div>
+
+                    <select id="persoane" class="ak-form-select">
+                        <option value="1">1 Persoană</option>
+                        <option value="2" selected>2 Persoane</option>
+                        <option value="4">4 Persoane</option>
+                        <option value="6">6 Persoane</option>
+                        <option value="10">10+ Persoane</option>
+                    </select>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="time" id="time" value="19:00" class="time-input">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" id="date" value="2026-04-01" class="date-input">
+                        </div>
+                    </div>
+
+                    <div style="margin: 20px 0; padding: 15px; border: 1px dashed #00adef;">
+                        <span style="color: white;">Verificare: Cât fac 3 + 4?</span>
+                        <input type="number" id="bot_answer" class="bot-check-input" required placeholder="Răspuns aici" style="margin-top: 10px;">
+                    </div>
+
+                    <p style="font-size: 12px; color: #999; margin-top: 15px; line-height: 1.4;">
+    * Prin trimiterea acestui formular, ești de acord cu procesarea datelor personale în scopul confirmării rezervării. Datele nu vor fi stocate în baze de date de marketing. 
+    <a href="termene.html" style="color: #999; margin-top: 15px; text-decoration: underline; line-height: 1.4;">Află mai multe aici.</a>
+</p>
+<br>
+
+                    <button type="submit" style="background: #00adef; color: white; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;">
+                        Trimite pe WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: #0d1117; color: #ffffff; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p style="font-size: 14px; opacity: 0.7;">© 2026 PESCĂRIA SUTAC. Plaja Corbu, Constanța.</p>
+            <p style="font-size: 16px;"><a href="tel:+40730292776" style="color: #00adef; text-decoration: none;">+40 730 292 776</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const raspuns = document.getElementById('bot_answer').value;
+            if(raspuns !== "7") {
+                alert("Răspuns incorect la verificarea anti-robot!");
+                return;
+            }
+
+            const nume = document.getElementById('nume_client').value;
+            const telClient = document.getElementById('telefon_client').value;
+            const nrPers = document.getElementById('persoane').options[document.getElementById('persoane').selectedIndex].text;
+            const ora = document.getElementById('time').value;
+            const data = document.getElementById('date').value;
+            const telDest = "40730292776";
+
+            const textMesaj = `Salut! Rezervare nouă:%0A%0A` +
+                              `👤 *Nume:* ${nume}%0A` +
+                              `📞 *Tel:* ${telClient}%0A` +
+                              `👥 *Pers:* ${nrPers}%0A` +
+                              `📅 *Data:* ${data}%0A` +
+                              `🕒 *Ora:* ${ora}`;
+
+            window.open(`https://wa.me/${telDest}?text=${textMesaj}`, '_blank').focus();
+        });
+    </script>
+</body>
+</html>

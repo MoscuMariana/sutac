@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meniu Complet - Pescăria Sutac</title>
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        /* Fundal unitar Dark */
+        body {
+            background-color: #0d1117; 
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        .ak-site_header {
+            background-color: #0d1117;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            background-color: #0d1117;
+        }
+
+        /* Sectiunea Canva */
+        .canva-wrapper {
+            width: 100%;
+            max-width: 1200px; 
+            height: 90vh; /* Înălțime mare pe desktop */
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .canva-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: none !important;
+        }
+
+        /* Caseta de link de jos - am făcut-o neagră ca restul paginii */
+        .external-link-box {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #0d1117;
+            width: 100%;
+            color: #ffffff;
+        }
+
+        .external-link-box a {
+            color: #00adef;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* REPARARE MOBIL */
+        @media (max-width: 768px) {
+            .canva-wrapper {
+                /* Forțăm o înălțime mult mai mare pe mobil pentru a nu comprima titlurile */
+                height: 120vh; 
+                padding: 0 5px;
+            }
+            
+            /* Eliminăm eventualele spații albe extra */
+            .ak-height-100 { display: none; } 
+        }
+    </style>
+</head>
+
+<body>
+    <header class="ak-site_header ak-sticky_header">
+        <div class="ak-main_header">
+            <div class="container">
+                <div class="ak-main_header_in" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                    <a href="index.html">
+                        <img src="assets/img/logo sutac alb.png" alt="Logo Sutac" style="height: 45px;">
+                    </a>
+                    <nav class="ak-nav">
+                        <ul class="ak-nav_list" style="display: flex; list-style: none; gap: 20px; margin: 0; padding: 0;">
+                            <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-weight: 500;">Acasă</a></li>
+                            <li><a href="menu.html" style="color: #00adef; text-decoration: none; font-weight: 500;">Meniu</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+                                <div class="ak-height-100 ak-height-lg-30"></div>
+
+        <section class="menu-container">
+            <div class="canva-wrapper">
+                <iframe 
+                    loading="lazy" 
+                    src="https://www.canva.com/design/DAHFih8u7mk/fu3j4naABdblEQx5LQzApA/view?embed" 
+                    allowfullscreen="allowfullscreen" 
+                    allow="fullscreen">
+                </iframe>
+            </div>
+
+            <div class="external-link-box">
+                <p>Meniul este prea mic sau nu se încarcă? <br>
+                    <a href="https://www.canva.com/design/DAHFih8u7mk/fu3j4naABdblEQx5LQzApA/view" target="_blank" rel="noopener">
+                        Deschide varianta optimizată pentru telefon
+                    </a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: #0d1117; color: #ffffff; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container text-center">
+            <p style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">© 2026 PESCĂRIA SUTAC. Plaja Corbu, Constanța.</p>
+            <p style="font-size: 16px; margin: 0;">
+                Rezervări: <a href="tel:+40730292776" style="color: #00adef; text-decoration: none;">+40 730 292 776</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
