@@ -6790,3 +6790,81 @@ h3.hero-main-title-1 {
 .ak-next-prev-2 .button-prev-next-2 svg:nth-child(2) {
     display: none !important;
 }
+
+
+
+
+/* ============================================================
+   REPARAȚIE MOBIL - PESCĂRIA SUTAC 
+   ============================================================ */
+
+@media screen and (max-width: 991px) {
+    /* 1. Resetăm înălțimea secțiunii Hero să fie flexibilă */
+    .ak-hero.ak-style1 {
+        min-height: 100vh !important; 
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding-top: 100px !important; 
+        padding-bottom: 60px !important;
+    }
+
+    /* 2. Reparăm poziționarea textului */
+    .ak-hero.ak-style1 .hero-text-section {
+        position: relative !important; 
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        height: auto !important;
+        top: 0 !important;
+        display: block !important;
+    }
+
+    /* 3. Ajustăm titlurile să încapă pe ecran */
+    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title {
+        font-size: 42px !important; 
+        line-height: 1.1 !important;
+        margin-bottom: 10px !important;
+        opacity: 1 !important;
+        top: 0 !important;
+    }
+
+    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
+        font-size: 30px !important; 
+        line-height: 1.2 !important;
+        display: block !important;
+        opacity: 1 !important;
+        top: 0 !important;
+    }
+
+    /* 4. Reparăm paragraful de descriere */
+    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text {
+        margin-right: 0 !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        opacity: 1 !important;
+        top: 0 !important;
+        text-align: left !important;
+    }
+
+    /* Eliminăm rupturile de rând forțate care strică aspectul pe mobil */
+    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text br {
+        display: none !important;
+    }
+
+    /* 5. Repoziționăm butoanele de control (săgețile) */
+    .ak-swiper-controll {
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        margin-top: 40px !important;
+        margin-left: 20px !important;
+        display: flex !important;
+    }
+    
+    .ak-swiper-navigation-wrap {
+        margin-right: 0 !important;
+        justify-content: flex-start !important;
+        gap: 80px !important;
+    }
+}
