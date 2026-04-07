@@ -6862,15 +6862,39 @@ h3.hero-main-title-1 {
         visibility: visible !important;
     }
 
-    /* 5. Descrierea (Sub-text) */
+    /* 4. Descrierea (Sub-text) - FORȚARE 4 RÂNDURI ȘI JUSTIFY */
     .hero-sub-text {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        
+        /* ALINIERE */
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        hyphens: auto !important; /* Desparte cuvintele în silabe dacă e nevoie, ca să nu lase goluri mari */
+        
+        /* DIMENSIUNI */
         font-size: 16px !important;
-        line-height: 1.6 !important;
-        text-align: left !important;
-        color: #ffffff !important;
-        margin-right: 0 !important;
+        line-height: 1.5 !important;
+        color: #000000 !important;
+        
+        /* CEA MAI IMPORTANTĂ PARTE: Îi tăiem lățimea ca să îl obligăm să sară pe rânduri noi */
+        width: 280px !important; /* Ajustează această valoare (250px - 300px) până obții exact 4 rânduri pe ecranul tău */
+        max-width: 85% !important; 
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        
+        /* Resetăm orice setare care l-ar forța să stea pe un singur rând */
+        white-space: normal !important;
+        overflow: visible !important;
     }
 
+    /* Ne asigurăm că BR-urile din HTML nu intervin */
+    .hero-sub-text br {
+        display: none !important;
+    }
+
+    /* Eliminăm br-urile din HTML care ar strica alinierea Justify */
     .hero-sub-text br {
         display: none !important;
     }
