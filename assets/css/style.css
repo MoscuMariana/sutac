@@ -6799,18 +6799,24 @@ h3.hero-main-title-1 {
    ============================================================ */
 
 @media screen and (max-width: 991px) {
-    /* 1. Resetăm înălțimea secțiunii Hero să fie flexibilă */
+    /* 1. Modificat: Inălțimea secțiunii Hero redusă la jumătate (55% din ecran) */
     .ak-hero.ak-style1 {
-        min-height: 100vh !important; 
+        min-height: 55vh !important; 
         height: auto !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        padding-top: 100px !important; 
-        padding-bottom: 60px !important;
+        padding-top: 90px !important; 
+        padding-bottom: 40px !important;
     }
 
-    /* 2. Reparăm poziționarea textului */
+    /* 1a. Asigurăm centrarea imaginii în noul spațiu mai mic */
+    .ak-hero.ak-style1 .ak-hero-bg {
+        background-position: center center !important;
+        height: 100% !important;
+    }
+
+    /* 2. Reparăm poziționarea textului (Rămâne neschimbat) */
     .ak-hero.ak-style1 .hero-text-section {
         position: relative !important; 
         margin-left: 20px !important;
@@ -6818,53 +6824,42 @@ h3.hero-main-title-1 {
         height: auto !important;
         top: 0 !important;
         display: block !important;
+        z-index: 2 !important;
     }
 
-    /* 3. Ajustăm titlurile să încapă pe ecran */
+    /* 3. Ajustăm titlurile (Rămâne neschimbat) */
     .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title {
-        font-size: 42px !important; 
+        font-size: 36px !important; 
         line-height: 1.1 !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 5px !important;
         opacity: 1 !important;
         top: 0 !important;
     }
 
     .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
-        font-size: 30px !important; 
+        font-size: 26px !important; 
         line-height: 1.2 !important;
-        display: block !important;
         opacity: 1 !important;
         top: 0 !important;
     }
 
-    /* 4. Reparăm paragraful de descriere */
+    /* 4. Descriere și scos pauzele de rând (Rămâne neschimbat) */
     .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text {
-        margin-right: 0 !important;
-        font-size: 16px !important;
-        line-height: 1.5 !important;
+        font-size: 15px !important;
+        line-height: 1.4 !important;
         opacity: 1 !important;
         top: 0 !important;
-        text-align: left !important;
     }
 
-    /* Eliminăm rupturile de rând forțate care strică aspectul pe mobil */
     .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text br {
         display: none !important;
     }
 
-    /* 5. Repoziționăm butoanele de control (săgețile) */
+    /* 5. Butoanele de slide (Rămâne neschimbat) */
     .ak-swiper-controll {
         position: relative !important;
         bottom: 0 !important;
-        left: 0 !important;
-        margin-top: 40px !important;
-        margin-left: 20px !important;
+        margin-top: 25px !important;
         display: flex !important;
-    }
-    
-    .ak-swiper-navigation-wrap {
-        margin-right: 0 !important;
-        justify-content: flex-start !important;
-        gap: 80px !important;
     }
 }
