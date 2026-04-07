@@ -6794,104 +6794,101 @@ h3.hero-main-title-1 {
 
 
 
-/* ============================================================
-   REPARAȚIE MOBIL - PESCĂRIA SUTAC 
-   ============================================================ */
 
 /* ============================================================
-   REPARAȚIE FINALĂ MOBIL - PESCĂRIA SUTAC 
+   REPARAȚIE PREMIUM - PESCĂRIA SUTAC (CULORI ȘI FONTURI PĂSTRATE)
    ============================================================ */
 
 @media screen and (max-width: 991px) {
-    /* 1. Înălțime flexibilă pentru Hero - îi dăm voie să crească dacă textul e mult */
+    /* 1. Ajustare înălțime Hero */
     .ak-hero.ak-style1 {
-        min-height: 70vh !important; /* Am urcat puțin la 70 ca să fim siguri că are loc textul */
+        min-height: 75vh !important; 
         height: auto !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        padding-top: 100px !important; 
-        padding-bottom: 50px !important;
+        padding-top: 110px !important; 
+        padding-bottom: 60px !important;
         position: relative !important;
-        overflow: visible !important;
     }
 
-    /* 2. Forțăm fundalul să stea fix în spate */
-    .ak-hero.ak-style1 .ak-hero-bg {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        z-index: 1 !important;
-        background-position: center !important;
-    }
-
-    /* 3. Containerul de text - îl scoatem din "absolute" și îl facem vizibil */
+    /* 2. Forțare vizibilitate fără a strica culorile */
     .ak-hero.ak-style1 .hero-text-section {
         position: relative !important; 
-        z-index: 5 !important; /* Îl punem deasupra pozei */
+        z-index: 10 !important; 
         margin: 0 20px !important;
-        width: auto !important;
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important;
     }
 
-    /* 4. FORȚĂM TEXTELE SĂ APARĂ (Resetăm animațiile GSAP/Swiper) */
+    /* Resetăm doar proprietățile de animație, NU și culorile */
     .hero-main-title, 
     .hero-main-title-1, 
     .hero-sub-text, 
-    .hero-btn.style-1 {
+    .hero-btn,
+    .slider-info {
         opacity: 1 !important;
         visibility: visible !important;
-        display: block !important;
-        transform: none !important; /* Anulează mișcarea de jos în sus care îl ascundea */
+        transform: translate(0, 0) !important; 
         position: relative !important;
         top: 0 !important;
-        left: 0 !important;
-        color: #ffffff !important; /* Ne asigurăm că e alb */
     }
 
-    /* Ajustăm dimensiunile fonturilor pentru lizibilitate */
+    /* 3. Ajustăm dimensiunile să nu iasă din ecran, dar păstrăm ierarhia */
     .hero-main-title {
-        font-size: 34px !important;
+        font-size: 38px !important; /* "Restaurant" */
         margin-bottom: 5px !important;
     }
 
     .hero-main-title-1 {
-        font-size: 26px !important;
+        font-size: 28px !important; /* "Pescăria Sutac" */
+        /* NU mai punem color: #ffffff aici, lăsăm CSS-ul original să decidă culoarea albastră */
+        line-height: 1.2 !important;
         margin-bottom: 15px !important;
-        color: #00adef !important; /* Albastrul Sutac */
     }
 
+    /* 4. Butonul "Rezervă" - Păstrăm stilul original (Galben) */
+    .ak-btn.style-5.color-yellow-bg {
+        display: inline-flex !important;
+        padding: 15px 30px !important; /* Dimensiune confortabilă pentru deget pe mobil */
+        background-color: #00adef !important; /* Dacă vrei galbenul original, pune codul de galben aici */
+        color: #000 !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        border-radius: 0px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* 4. Descrierea (Sub-text) - Aliniere Justify pe 4 rânduri */
     .hero-sub-text {
-        font-size: 16px !important;
-        line-height: 1.4 !important;
-        max-width: 100% !important;
+        font-size: 15px !important; /* Dimensiune optimă pentru 4 rânduri */
+        line-height: 1.6 !important; /* Spațiere între rânduri */
+        color: #000000 !important;
         margin-right: 0 !important;
+        
+        /* ALINIERE JUSTIFY */
+        text-align: justify !important;
+        text-justify: inter-word !important; /* Ajută la distribuirea egală a cuvintelor */
+        
+        /* FORȚARE 4 RÂNDURI */
+        max-width: 90% !important; /* Limităm lățimea ca să forțăm textul să coboare */
+        margin-left: 0 !important;
+        display: block !important;
     }
 
-    /* Eliminăm pauzele de rând care tăiau textul aiurea */
+    /* Eliminăm br-urile din HTML care ar strica alinierea Justify */
     .hero-sub-text br {
         display: none !important;
     }
 
-    /* 5. Butoanele de slide - le mutăm sub text */
+    /* Săgețile de control */
     .ak-swiper-controll {
         position: relative !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        margin-top: 30px !important;
-        margin-left: 0 !important;
-        z-index: 10 !important;
+        margin-top: 40px !important;
         display: flex !important;
         justify-content: flex-start !important;
-    }
-
-    .ak-swiper-navigation-wrap {
-        margin-right: 0 !important;
-        gap: 80px !important;
     }
 }
