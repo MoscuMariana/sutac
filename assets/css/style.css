@@ -6798,68 +6798,97 @@ h3.hero-main-title-1 {
    REPARAȚIE MOBIL - PESCĂRIA SUTAC 
    ============================================================ */
 
+/* ============================================================
+   REPARAȚIE FINALĂ ȘI SIGURĂ - PESCĂRIA SUTAC (MOBILE)
+   ============================================================ */
+
 @media screen and (max-width: 991px) {
-    /* 1. Modificat: Inălțimea secțiunii Hero redusă la jumătate (55% din ecran) */
+    /* 1. Containerul principal Hero - Forțăm înălțimea să fie flexibilă */
     .ak-hero.ak-style1 {
-        min-height: 55vh !important; 
+        min-height: 70vh !important; 
         height: auto !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        padding-top: 90px !important; 
-        padding-bottom: 40px !important;
+        padding-top: 120px !important; 
+        padding-bottom: 60px !important;
+        position: relative !important;
+        overflow: visible !important;
     }
 
-    /* 1a. Asigurăm centrarea imaginii în noul spațiu mai mic */
+    /* 2. Fundalul - Îl fixăm să acopere exact zona de sus */
     .ak-hero.ak-style1 .ak-hero-bg {
-        background-position: center center !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
         height: 100% !important;
+        z-index: 1 !important;
+        background-position: center !important;
+        background-size: cover !important;
     }
 
-    /* 2. Reparăm poziționarea textului (Rămâne neschimbat) */
+    /* 3. Textul - Forțăm vizibilitatea și anulăm animațiile blocate */
     .ak-hero.ak-style1 .hero-text-section {
         position: relative !important; 
-        margin-left: 20px !important;
-        margin-right: 20px !important;
-        height: auto !important;
-        top: 0 !important;
+        z-index: 10 !important; 
+        margin: 0 20px !important;
+        width: auto !important;
         display: block !important;
-        z-index: 2 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important; /* FOARTE IMPORTANT: Oprește textul din a rămâne ascuns jos */
     }
 
-    /* 3. Ajustăm titlurile (Rămâne neschimbat) */
-    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title {
-        font-size: 36px !important; 
-        line-height: 1.1 !important;
+    /* 4. Forțăm fiecare element de text să fie vizibil (Reset GSAP) */
+    .hero-main-title, 
+    .hero-main-title-1, 
+    .hero-sub-text, 
+    .hero-btn,
+    .slider-info,
+    .swiper-slide-active .slider-info * {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        transform: translate(0, 0) !important; 
+        position: relative !important;
+        top: 0 !important;
+        color: #ffffff !important;
+    }
+
+    /* Dimensiuni fonturi ajustate pentru telefon */
+    .hero-main-title {
+        font-size: 32px !important;
         margin-bottom: 5px !important;
-        opacity: 1 !important;
-        top: 0 !important;
     }
 
-    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
-        font-size: 26px !important; 
+    .hero-main-title-1 {
+        font-size: 24px !important;
+        color: #00adef !important; /* Albastru pentru Pescăria Sutac */
         line-height: 1.2 !important;
-        opacity: 1 !important;
-        top: 0 !important;
+        margin-bottom: 15px !important;
     }
 
-    /* 4. Descriere și scos pauzele de rând (Rămâne neschimbat) */
-    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text {
+    .hero-sub-text {
         font-size: 15px !important;
-        line-height: 1.4 !important;
-        opacity: 1 !important;
-        top: 0 !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+        margin-right: 0 !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
     }
 
-    .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text br {
-        display: none !important;
+    .hero-sub-text br {
+        display: none !important; /* Scoatem rupturile de rând de pe desktop */
     }
 
-    /* 5. Butoanele de slide (Rămâne neschimbat) */
+    /* 5. Butoanele de slide (Săgețile) - le punem la final */
     .ak-swiper-controll {
         position: relative !important;
         bottom: 0 !important;
-        margin-top: 25px !important;
+        left: 0 !important;
+        margin-top: 30px !important;
+        margin-left: 0 !important;
+        z-index: 20 !important;
         display: flex !important;
     }
 }
