@@ -6907,3 +6907,14 @@ h3.hero-main-title-1 {
         justify-content: flex-start !important;
     }
 }
+
+
+/* ASCUNDE SĂGEȚILE DIN HERO PE MOBIL ȘI TABLETĂ */
+@media screen and (max-width: 991px) {
+    .ak-swiper-controll, 
+    .ak-swiper-controll-two, 
+    .ak-swiper-controll-three,
+    .ak-swiper-controll-hero-2 {
+        display: none !important;
+    }
+}
