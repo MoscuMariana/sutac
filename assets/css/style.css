@@ -6955,3 +6955,20 @@ h3.hero-main-title-1 {
         display: none; 
     }
 }
+
+
+/* REPARAȚIE DOAR PENTRU DESKTOP */
+@media screen and (min-width: 992px) {
+    .ak-hero.ak-style1 .hero-text-section {
+        position: absolute !important; /* Îl punem înapoi peste imagine */
+        top: 50% !important;           /* Îl centrăm pe verticală */
+        transform: translateY(-50%) !important; 
+        margin-left: 160px !important;  /* Îl împingem la locul lui în stânga */
+        display: flex !important;
+        padding-top: 125px !important;      /* Anulăm spațiul pus pentru mobil */
+    }
+
+    /* Ne asigurăm că titlurile revin la mărimea mare */
+    .hero-main-title { font-size: 70px !important; }
+    .hero-main-title-1 { font-size: 50px !important; }
+}
