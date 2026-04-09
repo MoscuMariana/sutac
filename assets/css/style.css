@@ -6906,16 +6906,41 @@ h3.hero-main-title-1 {
     }
 }
 
-/* Acest cod se aplică doar pentru ecrane mai mici de 768px (telefoane) */
-@media only screen and (max-width: 768px) {
-    .best-item-section-3 .img-two {
-        width: 100% !important; /* Forțează containerul să ocupe toată lățimea */
-        max-width: 350px; /* Ajustează cifra asta până ești mulțumit de mărime */
-        margin: 20px auto; /* O centrează și lasă puțin spațiu sus/jos */
+/* REPARAȚIE PESCAR MOBIL */
+@media screen and (max-width: 767px) {
+    /* 1. Resetăm containerul principal să lase imaginea să respire */
+    .ak-best-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
-    .best-item-section-3 .img-two img {
-        width: 100%; /* Face imaginea să se întindă pe tot containerul */
-        height: auto;
+    /* 2. Forțăm secțiunea pescarului să fie vizibilă și mare */
+    .ak-best-item .best-item-section-3 {
+        flex-basis: auto !important;
+        width: 100% !important;
+        display: block !important;
+        order: 3; /* Îl pune sub text și sub steluță */
+    }
+
+    /* 3. Mărim imaginea propriu-zisă */
+    .ak-best-item .best-item-section-3 .img-two {
+        width: 80% !important; /* Ocupă 80% din lățimea ecranului */
+        max-width: 400px !important; /* Dar nu mai mult de 400px */
+        margin: 30px auto !important; /* O centrează cu spațiu sus/jos */
+        overflow: visible !important; /* Să nu fie tăiată */
+    }
+
+    .ak-best-item .best-item-section-3 .img-two img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        position: relative !important; /* Scoate orice poziționare absolută care o ascunde */
+        transform: none !important; /* Anulează orice animație care o mută greșit */
+    }
+
+    /* 4. Ascundem overlay-ul albastru dacă acoperă poza */
+    .ak-best-item .best-item-section-3 .img-overlay {
+        display: none !important;
     }
 }
