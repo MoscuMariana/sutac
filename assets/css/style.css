@@ -6882,8 +6882,8 @@ h3.hero-main-title-1 {
    ============================================================ */
 @media screen and (min-width: 992px) {
     /* Forțăm titlurile să revină la mărimea lor mare pe PC */
-    .hero-main-title { font-size: 70px !important; }
-    .hero-main-title-1 { font-size: 40px !important; }
+    .hero-main-title { font-size: 60px !important; }
+    .hero-main-title-1 { font-size: 35px !important; }
     
     /* Ne asigurăm că pe PC textul este centrat peste imagine ca înainte */
     .ak-hero.ak-style1 .hero-text-section {
