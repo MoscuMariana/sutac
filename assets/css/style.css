@@ -6906,7 +6906,7 @@ h3.hero-main-title-1 {
 /* Regula pentru mobil */
 @media (max-width: 768px) {
   /* Înlocuiește .clasa-ta cu numele clasei din HTML-ul tău */
-  .clasa-ta-pentru-brigada {
+  .hero-main-title-1{
     text-shadow: 
       -1px -1px 0 #000,  
        1px -1px 0 #000,
