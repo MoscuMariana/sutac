@@ -6973,22 +6973,20 @@ h3.hero-main-title-1 {
     .hero-main-title-1 { font-size: 30px !important; }
 }
 
-/* Modificare Hamburger Menu (Liniile albe și mai groase) */
+/* REPARAȚIE VIZIBILITATE MENIU - Culoare Neagră pentru contrast pe cer */
 @media screen and (max-width: 1199px) {
   .ak-munu_toggle span,
   .ak-munu_toggle span:before,
   .ak-munu_toggle span:after {
-    background-color: #ffffff !important; /* Forțează culoarea albă */
-    height: 4px !important;            /* Grosimea liniilor (modifică de la 2px la 4px) */
-    border-radius: 2px;                 /* Rotunjire opțională pentru aspect mai fin */
+    background-color: #000000 !important; /* AM SCHIMBAT DIN ALB ÎN NEGRU */
+    height: 4px !important;            
+    width: 30px !important;
+    border-radius: 2px;
   }
-
-  /* Ajustăm poziționarea liniilor din cauza grosimii mai mari */
   .ak-munu_toggle span:before {
-    margin-top: -11px !important;       /* Distanța liniei de sus */
+    margin-top: -10px !important;       
   }
-
   .ak-munu_toggle span:after {
-    margin-top: 11px !important;        /* Distanța liniei de jos */
+    margin-top: 10px !important;        
   }
 }
