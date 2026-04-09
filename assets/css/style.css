@@ -6999,25 +6999,6 @@ h3.hero-main-title-1 {
     .hero-main-title-1 { font-size: 30px !important; }
 }
 
-/* REPARAȚIE IMAGINE MOBIL - MAI MULTĂ CLĂDIRE, MAI PUȚIN CER */
-@media screen and (max-width: 991px) {
-    .ak-hero.ak-style1 {
-        /* Reducem înălțimea secțiunii pe mobil ca să nu mai forțeze atâta cer */
-        min-height: 55vh !important; 
-    }
-
-    .ak-hero.ak-style1 .ak-hero-bg {
-        /* 1. Mărim imaginea (Zoom) ca să iasă cerul din cadru */
-        background-size: 180% !important; 
-        
-        /* 2. Ancorăm imaginea de JOS (clădirea) și o mutăm puțin la dreapta (80%) */
-        /* Prima valoare e stânga-dreapta, a doua e sus-jos */
-        background-position: 80% bottom !important; 
-        
-        /* Ne asigurăm că imaginea acoperă tot containerul */
-        object-fit: cover !important;
-    }
-}
 
 /* ============================================================
    SOLUȚIE SCHIMBARE IMAGINE DOAR PENTRU MOBIL
@@ -7061,5 +7042,58 @@ h3.hero-main-title-1 {
         top: 0 !important;
         height: 100% !important;
         background-position: 80% bottom !important; /* Arată clădirea */
+    }
+}
+
+/* ============================================================
+   SOLUȚIE FINALĂ ELIMINARE SPAȚIU ALB MOBIL
+   ============================================================ */
+
+@media screen and (max-width: 991px) {
+    /* 1. Resetare totală Body (pentru orice eventualitate) */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Forțăm Header-ul să plutească FĂRĂ margini */
+    .ak-site_header, 
+    .ak-site_header.ak-style1,
+    .ak-main_header_in {
+        position: absolute !important;
+        top: 0 !important;
+        margin-top: 0 !important; /* Elimină cei 15px care pot lăsa alb */
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        height: auto !important;
+    }
+
+    /* 3. Reparăm secțiunea Hero (Imaginea) */
+    .ak-hero.ak-style1 {
+        margin-top: 0 !important; /* Esențial! */
+        padding-top: 0 !important; /* Elimină padding-ul de 80px din tema veche */
+        top: 0 !important;
+        min-height: 70vh !important; /* Poți ajusta cât de înaltă să fie poza */
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
+    }
+
+    /* 4. Forțăm fundalul să înceapă de la pixelul 0 de sus */
+    .ak-hero.ak-style1 .ak-hero-bg {
+        top: 0 !important;
+        margin-top: 0 !important;
+        height: 100% !important;
+        /* Zoom pe clădire (80% dreapta, jos) */
+        background-position: 80% bottom !important; 
+        background-size: cover !important;
+    }
+
+    /* 5. Eliminăm orice element invizibil care ar putea împinge conținutul */
+    .header-top, 
+    .ak-height-lg-80, 
+    .ak-height-lg-60 {
+        display: none !important;
     }
 }
