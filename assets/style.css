@@ -6893,3 +6893,22 @@ h3.hero-main-title-1 {
         margin-left: 160px !important;
     }
 }
+
+/* Elimină controalele slider-ului DOAR din secțiunea Hero pe mobil */
+@media screen and (max-width: 991px) {
+    .ak-hero .ak-swiper-controll, 
+    .ak-hero .ak-swiper-controll-hero-2,
+    .ak-hero .ak-swiper-controll-three {
+        display: none !important;
+    }
+}
+
+/* Doar pentru ecrane de mobil */
+@media only screen and (max-width: 768px) {
+     .hero-main-title-1 {
+        color: #ff0000 !important; /* Un albastru închis, mult mai vizibil pe fundal deschis */
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
