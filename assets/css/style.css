@@ -6906,3 +6906,16 @@ h3.hero-main-title-1 {
     }
 }
 
+/* Acest cod se aplică doar pentru ecrane mai mici de 768px (telefoane) */
+@media only screen and (max-width: 768px) {
+    .best-item-section-3 .img-two {
+        width: 100% !important; /* Forțează containerul să ocupe toată lățimea */
+        max-width: 350px; /* Ajustează cifra asta până ești mulțumit de mărime */
+        margin: 20px auto; /* O centrează și lasă puțin spațiu sus/jos */
+    }
+
+    .best-item-section-3 .img-two img {
+        width: 100%; /* Face imaginea să se întindă pe tot containerul */
+        height: auto;
+    }
+}
