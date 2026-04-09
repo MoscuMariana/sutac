@@ -6903,12 +6903,14 @@ h3.hero-main-title-1 {
     }
 }
 
-/* Doar pentru ecrane de mobil */
+/* TEST: Dacă asta nu face textul roșu, fișierul CSS nu e legat corect */
+.hero-main-title-1 {
+    color: #ff0000 !important;
+}
+
 @media only screen and (max-width: 768px) {
-    body h3.hero-main-title-1 {
-        color: #ff0000 !important; /* Un albastru închis, mult mai vizibil pe fundal deschis */
-        background: transparent !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+    h3.hero-main-title-1 {
+        color: #ff0000 !important;
+        -webkit-text-fill-color: #ff0000 !important; /* Forțare pentru iPhone/Safari */
     }
 }
