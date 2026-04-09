@@ -4175,11 +4175,10 @@ input[type=checkbox] {
 }
 
 
-/* Media query pentru ecrane de mobil (de regulă sub 768px) */
 @media (max-width: 768px) {
   .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
-    color: #000000; /* Schimbă culoarea în negru */
-    text-shadow: none; /* Opțional: scoate umbra dacă nu dă bine pe negru */
+    color: #000000 !important;
+    text-shadow: none !important; /* Scoatem și umbra ca să fie negru curat */
   }
 }
 
