@@ -6969,6 +6969,26 @@ h3.hero-main-title-1 {
     }
 
     /* Ne asigurăm că titlurile revin la mărimea mare */
-    .hero-main-title { font-size: 70px !important; }
-    .hero-main-title-1 { font-size: 50px !important; }
+    .hero-main-title { font-size: 50px !important; }
+    .hero-main-title-1 { font-size: 30px !important; }
+}
+
+/* Modificare Hamburger Menu (Liniile albe și mai groase) */
+@media screen and (max-width: 1199px) {
+  .ak-munu_toggle span,
+  .ak-munu_toggle span:before,
+  .ak-munu_toggle span:after {
+    background-color: #ffffff !important; /* Forțează culoarea albă */
+    height: 4px !important;            /* Grosimea liniilor (modifică de la 2px la 4px) */
+    border-radius: 2px;                 /* Rotunjire opțională pentru aspect mai fin */
+  }
+
+  /* Ajustăm poziționarea liniilor din cauza grosimii mai mari */
+  .ak-munu_toggle span:before {
+    margin-top: -11px !important;       /* Distanța liniei de sus */
+  }
+
+  .ak-munu_toggle span:after {
+    margin-top: 11px !important;        /* Distanța liniei de jos */
+  }
 }
