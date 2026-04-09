@@ -6906,41 +6906,40 @@ h3.hero-main-title-1 {
     }
 }
 
-/* REPARAȚIE PESCAR MOBIL */
+/* METODA FINALĂ: RESETARE TOTALĂ PENTRU PESCAR */
 @media screen and (max-width: 767px) {
-    /* 1. Resetăm containerul principal să lase imaginea să respire */
-    .ak-best-item {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    /* 2. Forțăm secțiunea pescarului să fie vizibilă și mare */
-    .ak-best-item .best-item-section-3 {
-        flex-basis: auto !important;
-        width: 100% !important;
+    /* Mărim containerul care ține pescarul */
+    .best-item-section-3 {
         display: block !important;
-        order: 3; /* Îl pune sub text și sub steluță */
-    }
-
-    /* 3. Mărim imaginea propriu-zisă */
-    .ak-best-item .best-item-section-3 .img-two {
-        width: 80% !important; /* Ocupă 80% din lățimea ecranului */
-        max-width: 400px !important; /* Dar nu mai mult de 400px */
-        margin: 30px auto !important; /* O centrează cu spațiu sus/jos */
-        overflow: visible !important; /* Să nu fie tăiată */
-    }
-
-    .ak-best-item .best-item-section-3 .img-two img {
+        position: relative !important;
         width: 100% !important;
+        height: 250px !important; /* Îi forțăm o înălțime vizibilă */
+        clear: both !important;
+        float: none !important;
+    }
+
+    .img-two {
+        width: 100% !important;
+        height: 100% !important;
+        position: relative !important;
+    }
+
+    /* Forțăm imaginea să fie uriașă și să ignore scripturile de mișcare */
+    .img-two img[src*="pescar.png"] {
+        width: 250px !important; /* Poți pune și 300px dacă vrei mai mare */
         height: auto !important;
-        display: block !important;
-        position: relative !important; /* Scoate orice poziționare absolută care o ascunde */
-        transform: none !important; /* Anulează orice animație care o mută greșit */
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important; /* O centrează perfect */
+        opacity: 1 !important;
+        visibility: visible !important;
+        max-width: none !important; /* Scoate limitarea de 100% */
+        z-index: 999 !important;
     }
 
-    /* 4. Ascundem overlay-ul albastru dacă acoperă poza */
-    .ak-best-item .best-item-section-3 .img-overlay {
+    /* Ștergem fundalul albastru care de obicei ascunde pozele în tema asta */
+    .img-overlay {
         display: none !important;
     }
 }
