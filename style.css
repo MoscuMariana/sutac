@@ -6799,18 +6799,33 @@ h3.hero-main-title-1 {
    REPARAȚIE PREMIUM - PESCĂRIA SUTAC (CULORI ȘI FONTURI PĂSTRATE)
    ============================================================ */
 
+
 @media screen and (max-width: 991px) {
-    /* 1. Ajustare înălțime Hero */
+    /* 1. Ajustare înălțime Hero - Imaginea va fi mai scundă */
     .ak-hero.ak-style1 {
-        min-height: 75vh !important; 
+        min-height: 50vh !important; /* Schimbă de la 75vh la 50vh sau 40vh pentru a o micșora */
         height: auto !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        padding-top: 110px !important; 
-        padding-bottom: 60px !important;
+        padding-top: 80px !important;  /* Am scăzut puțin și padding-ul ca să nu fie prea mult spațiu sus */
+        padding-bottom: 40px !important;
         position: relative !important;
     }
+
+    /* Ne asigurăm că imaginea de fundal se adaptează bine la noua înălțime */
+    .ak-hero.ak-style1 .ak-hero-bg {
+        background-size: cover !important;
+        background-position: center !important;
+    }
+}
+
+
+
+
+
+
+   
 
     /* 2. Forțare vizibilitate fără a strica culorile */
     .ak-hero.ak-style1 .hero-text-section {
@@ -6862,21 +6877,36 @@ h3.hero-main-title-1 {
         visibility: visible !important;
     }
 
-    /* 4. Descrierea (Sub-text) - Aliniere Justify pe 4 rânduri */
+    /* 4. Descrierea (Sub-text) - FORȚARE 4 RÂNDURI ȘI JUSTIFY */
     .hero-sub-text {
-        font-size: 15px !important; /* Dimensiune optimă pentru 4 rânduri */
-        line-height: 1.6 !important; /* Spațiere între rânduri */
-        color: #000000 !important;
-        margin-right: 0 !important;
-        
-        /* ALINIERE JUSTIFY */
-        text-align: justify !important;
-        text-justify: inter-word !important; /* Ajută la distribuirea egală a cuvintelor */
-        
-        /* FORȚARE 4 RÂNDURI */
-        max-width: 90% !important; /* Limităm lățimea ca să forțăm textul să coboare */
-        margin-left: 0 !important;
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        
+        /* ALINIERE */
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        hyphens: auto !important; /* Desparte cuvintele în silabe dacă e nevoie, ca să nu lase goluri mari */
+        
+        /* DIMENSIUNI */
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        color: #000000 !important;
+        
+        /* CEA MAI IMPORTANTĂ PARTE: Îi tăiem lățimea ca să îl obligăm să sară pe rânduri noi */
+        width: 280px !important; /* Ajustează această valoare (250px - 300px) până obții exact 4 rânduri pe ecranul tău */
+        max-width: 85% !important; 
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        
+        /* Resetăm orice setare care l-ar forța să stea pe un singur rând */
+        white-space: normal !important;
+        overflow: visible !important;
+    }
+
+    /* Ne asigurăm că BR-urile din HTML nu intervin */
+    .hero-sub-text br {
+        display: none !important;
     }
 
     /* Eliminăm br-urile din HTML care ar strica alinierea Justify */
@@ -6891,4 +6921,80 @@ h3.hero-main-title-1 {
         display: flex !important;
         justify-content: flex-start !important;
     }
+
+/* ASCUNDE SĂGEȚILE DIN HERO PE MOBIL ȘI TABLETĂ */
+@media screen and (max-width: 991px) {
+    .ak-swiper-controll, 
+    .ak-swiper-controll-two, 
+    .ak-swiper-controll-three,
+    .ak-swiper-controll-hero-2 {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    /* Facem secțiunea să ocupe toată lățimea pe mobil */
+    .ak-best-item {
+        display: flex;
+        flex-direction: column; /* Punem elementele unul sub altul */
+    }
+
+    .best-item-section-3 {
+        width: 100% !important; /* Forțăm lățimea maximă */
+        margin-top: 30px; /* Adăugăm puțin spațiu între text și imagine */
+    }
+
+    .best-item-section-3 .img-two img {
+        width: 100% !important; /* Imaginea se va întinde pe tot ecranul */
+        height: auto !important;
+        object-fit: cover;
+    }
+    
+    /* Ascundem linia cu stele pe mobil dacă încurcă layout-ul */
+    .best-item-section-2 {
+        display: none; 
+    }
+}
+
+
+/* REPARAȚIE DOAR PENTRU DESKTOP */
+@media screen and (min-width: 992px) {
+    .ak-hero.ak-style1 .hero-text-section {
+        position: absolute !important; /* Îl punem înapoi peste imagine */
+        top: 50% !important;           /* Îl centrăm pe verticală */
+        transform: translateY(-50%) !important; 
+        margin-left: 160px !important;  /* Îl împingem la locul lui în stânga */
+        display: flex !important;
+        padding-top: 125px !important;      /* Anulăm spațiul pus pentru mobil */
+    }
+
+    /* Ne asigurăm că titlurile revin la mărimea mare */
+    .hero-main-title { font-size: 50px !important; }
+    .hero-main-title-1 { font-size: 30px !important; }
+}
+
+/* REPARAȚIE VIZIBILITATE MENIU - Culoare Neagră pentru contrast pe cer */
+@media screen and (max-width: 1199px) {
+  .ak-munu_toggle span,
+  .ak-munu_toggle span:before,
+  .ak-munu_toggle span:after {
+    background-color: #000000 !important; /* AM SCHIMBAT DIN ALB ÎN NEGRU */
+    height: 4px !important;            
+    width: 30px !important;
+    border-radius: 2px;
+  }
+  .ak-munu_toggle span:before {
+    margin-top: -10px !important;       
+  }
+  .ak-munu_toggle span:after {
+    margin-top: 10px !important;        
+  }
+}
+
+
+@media (max-width: 768px) {
+  .imagine-background {
+    background-size: 150%; /* Face zoom */
+    background-position: 80% bottom; /* Se mută spre dreapta-jos unde e clădirea */
+  }
 }
