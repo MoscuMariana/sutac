@@ -6865,7 +6865,7 @@ h3.hero-main-title-1 {
 
     .ak-hero.ak-style1 .ak-hero-bg {
         /* SCHIMBĂ AICI NUMELE POZEI TALE PENTRU MOBIL */
-        background-image: url('../assets/img/hero_mobile.jpg') !important; 
+        background-image: url('../assets/img/hero_mobil.jpg') !important; 
         
         top: 0 !important;
         background-size: cover !important;
