@@ -6992,3 +6992,18 @@ h3.hero-main-title-1 {
         object-fit: cover !important;
     }
 }
+
+/* ============================================================
+   SOLUȚIE SCHIMBARE IMAGINE DOAR PENTRU MOBIL
+   ============================================================ */
+
+@media screen and (max-width: 767px) {
+    .ak-hero.ak-style1 .ak-hero-bg {
+        /* Schimbăm sursa pozei doar pe mobil */
+        background-image: url('../assets/img/hero-mobil.jpg') !important;
+        
+        /* O reglăm să se vadă perfect */
+        background-size: cover !important;
+        background-position: center bottom !important;
+    }
+}
