@@ -6794,29 +6794,55 @@ h3.hero-main-title-1 {
 
 
 
-
 /* ============================================================
-   REPARAȚIE PREMIUM - PESCĂRIA SUTAC (CULORI ȘI FONTURI PĂSTRATE)
+   REPARAȚIE FINALĂ - PESCĂRIA SUTAC (DOAR MOBIL)
    ============================================================ */
 
-
 @media screen and (max-width: 991px) {
-    /* 1. Ajustare înălțime Hero - Imaginea va fi mai scundă */
+    /* 1. Eliminăm spațiul alb de sus */
     .ak-hero.ak-style1 {
-        min-height: 50vh !important; /* Schimbă de la 75vh la 50vh sau 40vh pentru a o micșora */
-        height: auto !important;
+        min-height: 60vh !important; /* Ajustează înălțimea totală */
+        padding-top: 0 !important;   /* ELIMINĂ padding-ul care lăsa golul alb */
+        margin-top: 0 !important;
         display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        padding-top: 80px !important;  /* Am scăzut puțin și padding-ul ca să nu fie prea mult spațiu sus */
-        padding-bottom: 40px !important;
-        position: relative !important;
+        align-items: center !important; /* Centrează textul vertical peste poză */
     }
 
-    /* Ne asigurăm că imaginea de fundal se adaptează bine la noua înălțime */
+    /* 2. Fixăm imaginea: Mai multă clădire, zero spațiu alb */
     .ak-hero.ak-style1 .ak-hero-bg {
         background-size: cover !important;
-        background-position: center !important;
+        /* "80% bottom" mută camera spre dreapta (clădire) și jos (clădire) */
+        background-position: 80% bottom !important; 
+        top: 0 !important;
+        height: 100% !important;
+    }
+
+    /* 3. Poziționare text peste imagine */
+    .ak-hero.ak-style1 .hero-text-section {
+        position: relative !important;
+        margin: 0 20px !important;
+        z-index: 10 !important;
+        background: rgba(255, 255, 255, 0.1); /* Opțional: un strat foarte fin pt citibilitate */
+        padding: 20px !important;
+    }
+
+    /* 4. Sub-textul (Descrierea) - Forțare format compact */
+    .hero-sub-text {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: left !important; /* Justify arată ciudat pe ecrane foarte mici */
+        color: #000000 !important;
+        font-weight: 500 !important;
+        line-height: 1.4 !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+/* Header-ul trebuie să fie transparent pe mobil ca să nu lase bandă albă */
+@media screen and (max-width: 1199px) {
+    .ak-site_header.ak-style1 {
+        background-color: transparent !important;
+        position: absolute !important;
     }
 }
 
@@ -7000,7 +7026,7 @@ h3.hero-main-title-1 {
 @media screen and (max-width: 767px) {
     .ak-hero.ak-style1 .ak-hero-bg {
         /* Schimbăm sursa pozei doar pe mobil */
-        background-image: url('../assets/img/hero-mobil.jpg') !important;
+        background-image: url('/assets/assets/img/hero_mobile.jpg') !important;
         
         /* O reglăm să se vadă perfect */
         background-size: cover !important;
