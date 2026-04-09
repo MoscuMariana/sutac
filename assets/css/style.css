@@ -6893,3 +6893,12 @@ h3.hero-main-title-1 {
         margin-left: 160px !important;
     }
 }
+
+/* Elimină controalele slider-ului DOAR din secțiunea Hero pe mobil */
+@media screen and (max-width: 991px) {
+    .ak-hero .ak-swiper-controll, 
+    .ak-hero .ak-swiper-controll-hero-2,
+    .ak-hero .ak-swiper-controll-three {
+        display: none !important;
+    }
+}
