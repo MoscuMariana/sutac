@@ -4164,13 +4164,15 @@ input[type=checkbox] {
 }
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
   font-style: italic;
- 
-  color:   #0a8ec3;
+  color: #0a8ec3;
   position: relative;
   top: 40px;
   opacity: 0;
-  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);}
-
+  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+  
+  /* Linia adăugată pentru umbră */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); 
+}
 
 
   .ak-hero.ak-style3 .hero-text-section .slider-info .hero-title .hero-main-title-3 {
@@ -6903,14 +6905,3 @@ h3.hero-main-title-1 {
     }
 }
 
-/* TEST: Dacă asta nu face textul roșu, fișierul CSS nu e legat corect */
-.hero-main-title-1 {
-    color: #1406d3 !important;
-}
-
-@media only screen and (max-width: 768px) {
-    h3.hero-main-title-1 {
-        color: #1406d3 !important;
-        -webkit-text-fill-color: #1406d3 !important; /* Forțare pentru iPhone/Safari */
-    }
-}
