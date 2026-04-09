@@ -6973,28 +6973,22 @@ h3.hero-main-title-1 {
     .hero-main-title-1 { font-size: 30px !important; }
 }
 
-/* REPARAȚIE VIZIBILITATE MENIU - Culoare Neagră pentru contrast pe cer */
-@media screen and (max-width: 1199px) {
-  .ak-munu_toggle span,
-  .ak-munu_toggle span:before,
-  .ak-munu_toggle span:after {
-    background-color: #000000 !important; /* AM SCHIMBAT DIN ALB ÎN NEGRU */
-    height: 4px !important;            
-    width: 30px !important;
-    border-radius: 2px;
-  }
-  .ak-munu_toggle span:before {
-    margin-top: -10px !important;       
-  }
-  .ak-munu_toggle span:after {
-    margin-top: 10px !important;        
-  }
-}
+/* REPARAȚIE IMAGINE MOBIL - MAI MULTĂ CLĂDIRE, MAI PUȚIN CER */
+@media screen and (max-width: 991px) {
+    .ak-hero.ak-style1 {
+        /* Reducem înălțimea secțiunii pe mobil ca să nu mai forțeze atâta cer */
+        min-height: 55vh !important; 
+    }
 
-
-@media (max-width: 768px) {
-  .imagine-background {
-    background-size: 150%; /* Face zoom */
-    background-position: 80% bottom; /* Se mută spre dreapta-jos unde e clădirea */
-  }
+    .ak-hero.ak-style1 .ak-hero-bg {
+        /* 1. Mărim imaginea (Zoom) ca să iasă cerul din cadru */
+        background-size: 180% !important; 
+        
+        /* 2. Ancorăm imaginea de JOS (clădirea) și o mutăm puțin la dreapta (80%) */
+        /* Prima valoare e stânga-dreapta, a doua e sus-jos */
+        background-position: 80% bottom !important; 
+        
+        /* Ne asigurăm că imaginea acoperă tot containerul */
+        object-fit: cover !important;
+    }
 }
