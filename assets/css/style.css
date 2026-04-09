@@ -6906,39 +6906,36 @@ h3.hero-main-title-1 {
     }
 }
 
-/* METODA FINALĂ: RESETARE TOTALĂ PENTRU PESCAR */
 @media screen and (max-width: 767px) {
-    /* Mărim containerul care ține pescarul */
-    .best-item-section-3 {
+    /* Forțăm containerele să se așeze unul sub altul, nu pe coloane */
+    .ak-best-item {
         display: block !important;
-        position: relative !important;
-        width: 100% !important;
-        height: 250px !important; /* Îi forțăm o înălțime vizibilă */
-        clear: both !important;
-        float: none !important;
     }
 
+    /* Facem secțiunea 3 (cea cu pescarul) să fie lată cât ecranul */
+    .best-item-section-3 {
+        width: 100% !important;
+        display: block !important;
+        margin-top: 20px !important;
+    }
+
+    /* Mărim imaginea propriu-zisă */
     .img-two {
-        width: 100% !important;
-        height: 100% !important;
+        width: 80% !important; /* Ajustează aici dacă o vrei și mai mare (ex. 100%) */
+        max-width: 400px !important;
+        margin: 0 auto !important;
         position: relative !important;
     }
 
-    /* Forțăm imaginea să fie uriașă și să ignore scripturile de mișcare */
-    .img-two img[src*="pescar.png"] {
-        width: 250px !important; /* Poți pune și 300px dacă vrei mai mare */
+    .img-two img.poza-pescar-mobil {
+        display: block !important;
+        width: 100% !important;
         height: auto !important;
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important; /* O centrează perfect */
-        opacity: 1 !important;
-        visibility: visible !important;
-        max-width: none !important; /* Scoate limitarea de 100% */
-        z-index: 999 !important;
+        position: relative !important;
+        transform: none !important; /* Oprește scriptul care o mișcă aiurea pe mobil */
     }
 
-    /* Ștergem fundalul albastru care de obicei ascunde pozele în tema asta */
+    /* Ștergem definitiv overlay-ul care o poate acoperi */
     .img-overlay {
         display: none !important;
     }
