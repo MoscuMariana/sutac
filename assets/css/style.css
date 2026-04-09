@@ -6903,22 +6903,12 @@ h3.hero-main-title-1 {
     }
 }
 
-/* Se aplică DOAR pe mobil (ecrane sub 768px) */
+/* Doar pentru ecrane de mobil */
 @media only screen and (max-width: 768px) {
-    h3.hero-main-title-1 {
-        /* Adăugăm un contur negru gros în jurul literelor pentru vizibilitate maximă */
-        text-shadow: 
-            -2px -2px 0 #000,  
-             2px -2px 0 #000,
-            -2px  2px 0 #000,
-             2px  2px 0 #000,
-             3px  3px 5px rgba(0,0,0,0.8) !important;
-        
-        /* Opțional: Dacă tot e greu de citit, poți forța și o culoare mai deschisă */
-        color: #ffffff !important; 
-        
-        /* Ne asigurăm că textul nu este tăiat */
-        display: block !important;
-        line-height: 1.4 !important;
+    body h3.hero-main-title-1 {
+        color: #004a99 !important; /* Un albastru închis, mult mai vizibil pe fundal deschis */
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 }
