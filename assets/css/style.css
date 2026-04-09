@@ -6795,305 +6795,104 @@ h3.hero-main-title-1 {
 
 
 /* ============================================================
-   REPARAȚIE FINALĂ - PESCĂRIA SUTAC (DOAR MOBIL)
+   REPARAȚIE FINALĂ: ELIMINARE SPAȚIU ALB + HAMBURGER NEGRU
    ============================================================ */
 
-@media screen and (max-width: 991px) {
-    /* 1. Eliminăm spațiul alb de sus */
-    .ak-hero.ak-style1 {
-        min-height: 60vh !important; /* Ajustează înălțimea totală */
-        padding-top: 0 !important;   /* ELIMINĂ padding-ul care lăsa golul alb */
-        margin-top: 0 !important;
-        display: flex !important;
-        align-items: center !important; /* Centrează textul vertical peste poză */
-    }
+/* 1. REPARAȚIE HĂRȚI & ALTELE (Păstrat de la tine) */
+.google-map-full { width: 100%; line-height: 0; margin: 0; padding: 0; }
+.google-map-full iframe { width: 100% !important; display: block; }
+@media (max-width: 768px) { .google-map-full iframe { height: 300px; } }
+.ak-bg-img { background-image: url('../assets/img/background.png'); }
+.ak-custom-input { width: 100%; background-color: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; padding: 12px 15px; border-radius: 5px; outline: none; }
+.ak-form-select { background-color: #222; color: white; border: 1px solid #444; padding: 10px; width: 100%; appearance: none; -webkit-appearance: none; }
 
-    /* 2. Fixăm imaginea: Mai multă clădire, zero spațiu alb */
-    .ak-hero.ak-style1 .ak-hero-bg {
-        background-size: cover !important;
-        /* "80% bottom" mută camera spre dreapta (clădire) și jos (clădire) */
-        background-position: 80% bottom !important; 
-        top: 0 !important;
-        height: 100% !important;
-    }
-
-    /* 3. Poziționare text peste imagine */
-    .ak-hero.ak-style1 .hero-text-section {
-        position: relative !important;
-        margin: 0 20px !important;
-        z-index: 10 !important;
-        background: rgba(255, 255, 255, 0.1); /* Opțional: un strat foarte fin pt citibilitate */
-        padding: 20px !important;
-    }
-
-    /* 4. Sub-textul (Descrierea) - Forțare format compact */
-    .hero-sub-text {
-        width: 100% !important;
-        max-width: 280px !important;
-        text-align: left !important; /* Justify arată ciudat pe ecrane foarte mici */
-        color: #000000 !important;
-        font-weight: 500 !important;
-        line-height: 1.4 !important;
-        margin-bottom: 20px !important;
-    }
-}
-
-/* Header-ul trebuie să fie transparent pe mobil ca să nu lase bandă albă */
-@media screen and (max-width: 1199px) {
-    .ak-site_header.ak-style1 {
-        background-color: transparent !important;
-        position: absolute !important;
-    }
-}
-
-
-
-
-
-
-   
-
-    /* 2. Forțare vizibilitate fără a strica culorile */
-    .ak-hero.ak-style1 .hero-text-section {
-        position: relative !important; 
-        z-index: 10 !important; 
-        margin: 0 20px !important;
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
-
-    /* Resetăm doar proprietățile de animație, NU și culorile */
-    .hero-main-title, 
-    .hero-main-title-1, 
-    .hero-sub-text, 
-    .hero-btn,
-    .slider-info {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translate(0, 0) !important; 
-        position: relative !important;
-        top: 0 !important;
-    }
-
-    /* 3. Ajustăm dimensiunile să nu iasă din ecran, dar păstrăm ierarhia */
-    .hero-main-title {
-        font-size: 38px !important; /* "Restaurant" */
-        margin-bottom: 5px !important;
-    }
-
-    .hero-main-title-1 {
-        font-size: 28px !important; /* "Pescăria Sutac" */
-        /* NU mai punem color: #ffffff aici, lăsăm CSS-ul original să decidă culoarea albastră */
-        line-height: 1.2 !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* 4. Butonul "Rezervă" - Păstrăm stilul original (Galben) */
-    .ak-btn.style-5.color-yellow-bg {
-        display: inline-flex !important;
-        padding: 15px 30px !important; /* Dimensiune confortabilă pentru deget pe mobil */
-        background-color: #00adef !important; /* Dacă vrei galbenul original, pune codul de galben aici */
-        color: #000 !important;
-        font-weight: 600 !important;
-        text-transform: uppercase !important;
-        border-radius: 0px !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    /* 4. Descrierea (Sub-text) - FORȚARE 4 RÂNDURI ȘI JUSTIFY */
-    .hero-sub-text {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        
-        /* ALINIERE */
-        text-align: justify !important;
-        text-justify: inter-word !important;
-        hyphens: auto !important; /* Desparte cuvintele în silabe dacă e nevoie, ca să nu lase goluri mari */
-        
-        /* DIMENSIUNI */
-        font-size: 16px !important;
-        line-height: 1.5 !important;
-        color: #000000 !important;
-        
-        /* CEA MAI IMPORTANTĂ PARTE: Îi tăiem lățimea ca să îl obligăm să sară pe rânduri noi */
-        width: 280px !important; /* Ajustează această valoare (250px - 300px) până obții exact 4 rânduri pe ecranul tău */
-        max-width: 85% !important; 
-        margin-left: 0 !important;
-        margin-right: auto !important;
-        
-        /* Resetăm orice setare care l-ar forța să stea pe un singur rând */
-        white-space: normal !important;
-        overflow: visible !important;
-    }
-
-    /* Ne asigurăm că BR-urile din HTML nu intervin */
-    .hero-sub-text br {
-        display: none !important;
-    }
-
-    /* Eliminăm br-urile din HTML care ar strica alinierea Justify */
-    .hero-sub-text br {
-        display: none !important;
-    }
-
-    /* Săgețile de control */
-    .ak-swiper-controll {
-        position: relative !important;
-        margin-top: 40px !important;
-        display: flex !important;
-        justify-content: flex-start !important;
-    }
-
-/* ASCUNDE SĂGEȚILE DIN HERO PE MOBIL ȘI TABLETĂ */
-@media screen and (max-width: 991px) {
-    .ak-swiper-controll, 
-    .ak-swiper-controll-two, 
-    .ak-swiper-controll-three,
-    .ak-swiper-controll-hero-2 {
-        display: none !important;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    /* Facem secțiunea să ocupe toată lățimea pe mobil */
-    .ak-best-item {
-        display: flex;
-        flex-direction: column; /* Punem elementele unul sub altul */
-    }
-
-    .best-item-section-3 {
-        width: 100% !important; /* Forțăm lățimea maximă */
-        margin-top: 30px; /* Adăugăm puțin spațiu între text și imagine */
-    }
-
-    .best-item-section-3 .img-two img {
-        width: 100% !important; /* Imaginea se va întinde pe tot ecranul */
-        height: auto !important;
-        object-fit: cover;
-    }
-    
-    /* Ascundem linia cu stele pe mobil dacă încurcă layout-ul */
-    .best-item-section-2 {
-        display: none; 
-    }
-}
-
-
-/* REPARAȚIE DOAR PENTRU DESKTOP */
-@media screen and (min-width: 992px) {
-    .ak-hero.ak-style1 .hero-text-section {
-        position: absolute !important; /* Îl punem înapoi peste imagine */
-        top: 50% !important;           /* Îl centrăm pe verticală */
-        transform: translateY(-50%) !important; 
-        margin-left: 160px !important;  /* Îl împingem la locul lui în stânga */
-        display: flex !important;
-        padding-top: 125px !important;      /* Anulăm spațiul pus pentru mobil */
-    }
-
-    /* Ne asigurăm că titlurile revin la mărimea mare */
-    .hero-main-title { font-size: 50px !important; }
-    .hero-main-title-1 { font-size: 30px !important; }
-}
-
-
-/* ============================================================
-   SOLUȚIE SCHIMBARE IMAGINE DOAR PENTRU MOBIL
-   ============================================================ */
-
-@media screen and (max-width: 767px) {
-    .ak-hero.ak-style1 .ak-hero-bg {
-        /* Schimbăm sursa pozei doar pe mobil */
-        background-image: url('/assets/assets/img/hero_mobile.jpg') !important;
-        
-        /* O reglăm să se vadă perfect */
-        background-size: cover !important;
-        background-position: center bottom !important;
-    }
-}
-
-
-/* FORȚARE HEADER TRANSPARENT ȘI SUPRAPUS PE MOBIL */
+/* 2. REPARAȚIE MOBIL (DOAR ACEST BLOC TREBUIE SĂ EXISTE) */
 @media screen and (max-width: 991px) {
     
-    /* 1. Scoatem header-ul din fluxul paginii */
+    /* Resetare globală pentru a lipi totul de margini */
+    html, body { margin: 0 !important; padding: 0 !important; overflow-x: hidden; }
+
+    /* ELIMINARE SPAȚIU ALB: Header-ul nu mai ocupă loc fizic */
     .ak-site_header.ak-style1 {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        background: transparent !important; /* Elimină banda albă */
-        box-shadow: none !important;
-    }
-
-    /* 2. Ne asigurăm că secțiunea Hero începe exact de la marginea de sus a ecranului */
-    .ak-hero.ak-style1 {
+        background: transparent !important;
         margin-top: 0 !important;
-        padding-top: 0 !important;
-        position: relative !important;
-        top: 0 !important;
+        z-index: 999 !important;
     }
 
-    /* 3. Poziționăm imaginea de fundal să umple tot spațiul, inclusiv sub header */
+    /* Aliniere elemente header pe același rând */
+    .ak-main_header_in {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 70px !important;
+        padding: 0 20px !important;
+        margin: 0 !important;
+    }
+
+    /* Logo micșorat ca să încapă lângă hamburger */
+    .ak-site_branding img { max-height: 40px !important; width: auto !important; }
+
+    /* HAMBURGER NEGRU ÎN DREAPTA */
+    .ak-munu_toggle {
+        display: block !important;
+        position: relative !important;
+        right: 0 !important;
+        top: 0 !important;
+        margin: 0 !important;
+    }
+
+    .ak-munu_toggle span,
+    .ak-munu_toggle span:before,
+    .ak-munu_toggle span:after {
+        background-color: #000000 !important; /* FORȚARE NEGRU */
+        height: 3px !important;
+    }
+
+    /* REPARAȚIE IMAGINE (Să se vadă clădirea, nu cerul) */
+    .ak-hero.ak-style1 {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        min-height: 65vh !important; /* Înălțime mai mică pe mobil */
+    }
+
     .ak-hero.ak-style1 .ak-hero-bg {
         top: 0 !important;
-        height: 100% !important;
-        background-position: 80% bottom !important; /* Arată clădirea */
+        background-size: cover !important;
+        background-position: 80% bottom !important; /* Centrează pe clădirea din dreapta-jos */
     }
+
+    /* Textul de pe imagine - Citibilitate */
+    .ak-hero.ak-style1 .hero-text-section {
+        position: relative !important;
+        margin: 20px !important;
+        padding-top: 80px !important; /* Împinge textul sub logo ca să nu se suprapună */
+    }
+
+    .hero-main-title { font-size: 32px !important; color: #fff !important; }
+    .hero-main-title-1 { font-size: 24px !important; margin-bottom: 10px !important; }
+    
+    .hero-sub-text {
+        width: 100% !important;
+        max-width: 300px !important;
+        color: #000000 !important; /* Păstrat negru conform cerinței tale anterioare */
+        font-weight: 500 !important;
+        text-align: left !important;
+    }
+
+    /* Ștergem orice "spacer" care adaugă goluri albe */
+    .header-top, .ak-height-lg-80, .ak-height-lg-60 { display: none !important; }
 }
 
-/* ============================================================
-   SOLUȚIE FINALĂ ELIMINARE SPAȚIU ALB MOBIL
-   ============================================================ */
-
-@media screen and (max-width: 991px) {
-    /* 1. Resetare totală Body (pentru orice eventualitate) */
-    html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* 2. Forțăm Header-ul să plutească FĂRĂ margini */
-    .ak-site_header, 
-    .ak-site_header.ak-style1,
-    .ak-main_header_in {
+/* 3. REPARAȚIE DESKTOP (Păstrăm layout-ul mare) */
+@media screen and (min-width: 992px) {
+    .ak-hero.ak-style1 .hero-text-section {
         position: absolute !important;
-        top: 0 !important;
-        margin-top: 0 !important; /* Elimină cei 15px care pot lăsa alb */
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        height: auto !important;
-    }
-
-    /* 3. Reparăm secțiunea Hero (Imaginea) */
-    .ak-hero.ak-style1 {
-        margin-top: 0 !important; /* Esențial! */
-        padding-top: 0 !important; /* Elimină padding-ul de 80px din tema veche */
-        top: 0 !important;
-        min-height: 70vh !important; /* Poți ajusta cât de înaltă să fie poza */
-        display: flex !important;
-        align-items: center !important;
-        overflow: hidden !important;
-    }
-
-    /* 4. Forțăm fundalul să înceapă de la pixelul 0 de sus */
-    .ak-hero.ak-style1 .ak-hero-bg {
-        top: 0 !important;
-        margin-top: 0 !important;
-        height: 100% !important;
-        /* Zoom pe clădire (80% dreapta, jos) */
-        background-position: 80% bottom !important; 
-        background-size: cover !important;
-    }
-
-    /* 5. Eliminăm orice element invizibil care ar putea împinge conținutul */
-    .header-top, 
-    .ak-height-lg-80, 
-    .ak-height-lg-60 {
-        display: none !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        margin-left: 160px !important;
     }
 }
