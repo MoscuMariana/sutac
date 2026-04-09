@@ -6910,13 +6910,17 @@ h3.hero-main-title-1 {
     /* Forțăm containerele să se așeze unul sub altul, nu pe coloane */
     .ak-best-item {
         display: block !important;
-    }
-  }
+    }}
 
-/* D. Mărire poza cu PESCARUL (Secțiunea Despre Noi) */
+/* ============================================================
+   MARIRE POZA PESCAR - DOAR PENTRU MOBIL
+   ============================================================ */
+@media screen and (max-width: 991px) { 
+    /* Tot ce scrii intre aceste acolade se aplica DOAR sub 991px lățime */
+
     .ak-best-item {
         display: flex !important;
-        flex-direction: column !important; /* Le punem unul sub altul */
+        flex-direction: column !important; 
     }
     
     .best-item-section-1, 
@@ -6930,16 +6934,18 @@ h3.hero-main-title-1 {
     }
 
     .best-item-section-3 .img-two {
-        height: 400px !important; /* Forțăm o înălțime generoasă pentru poza pescarului */
+        height: 350px !important; /* Am scazut putin de la 400 ca sa nu ocupe tot ecranul telefonului */
         width: 100% !important;
     }
 
     .best-item-section-3 .img-two img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; /* Imaginea umple spațiul fără să se deformeze */
+        object-fit: contain !important; /* Folosește contain daca vrei sa se vada tot pescarul, sau cover daca vrei sa umple dreptunghiul */
     }
 
     .best-item-section-2 {
-        display: none !important; /* Ascundem steaua decorativă care bloca spațiul */
+        display: none !important; 
     }
+}
+/* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
