@@ -6906,7 +6906,7 @@ h3.hero-main-title-1 {
 /* Doar pentru ecrane de mobil */
 @media only screen and (max-width: 768px) {
     body h3.hero-main-title-1 {
-        color: #004a99 !important; /* Un albastru închis, mult mai vizibil pe fundal deschis */
+        color: #ff0000 !important; /* Un albastru închis, mult mai vizibil pe fundal deschis */
         background: transparent !important;
         opacity: 1 !important;
         visibility: visible !important;
