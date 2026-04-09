@@ -6911,3 +6911,28 @@ h3.hero-main-title-1 {
         margin-left: 160px !important;
     }
 }
+
+/* REPARAȚIE IMAGINE HERO (Testat pentru a elimina albul) */
+    .ak-hero.ak-style1 {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        min-height: 500px !important;
+        height: 500px !important;
+        background-color: transparent !important; /* Elimină riscul de alb de aici */
+        position: relative !important;
+    }
+
+    .ak-hero.ak-style1 .ak-hero-bg {
+        /* Încearcă variantele de mai jos pe rând dacă nu merge prima: */
+        background-image: url('../img/hero_mobil.jpg') !important; 
+        
+        background-color: transparent !important;
+        display: block !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        z-index: -1 !important; /* O punem în spatele textului, dar vizibilă */
+    }
