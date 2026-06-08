@@ -6948,6 +6948,12 @@ h3.hero-main-title-1 {
     .best-item-section-2 {
         display: none !important; 
     }
+
+    @media screen and (max-width: 991px) {
+    p {
+        font-size: 18px !important;
+    }
+}
 }
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
