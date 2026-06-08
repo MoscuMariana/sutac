@@ -3509,6 +3509,7 @@ input[type=checkbox] {
   }
   .ak-nav .ak-nav_list > li > a {
     padding: 10px 0;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     display: inline-flex;
     position: relative;
     height: inherit;
@@ -6950,6 +6951,7 @@ h3.hero-main-title-1 {
 }
 /* Aici se termina codul de mobil. Tot ce e sub linia asta e pentru Desktop. */
 
+
 /* /* ============================================================
    DESIGN CENTRAT: LOGO SUS + MENIU JOS (SUB LOGO)
    ============================================================ */
@@ -7015,10 +7017,11 @@ h3.hero-main-title-1 {
     }
 
     .ak-nav .ak-nav_list li a {
-        font-size: 13px !important;
+        font-size: 18px !important;
+        
         color: #ffffff !important;
         text-transform: uppercase !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9) !important;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.9) !important;
         white-space: nowrap !important;
         padding: 5px 0 !important;
     }
